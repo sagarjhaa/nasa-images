@@ -16,5 +16,7 @@ jobs:
     # Uses a ubuntu-lates runner to complete the requested steps
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
+      - uses: ./.github/actions/action
+    # - run: actions/
+        #|
+        #echo "Hello ${{ github.event.inputs.name }}!"
