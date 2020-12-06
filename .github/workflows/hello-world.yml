@@ -4,24 +4,6 @@ name: document reminder
 on: 
   pull_request:
     types: [assigned, opened, synchronize, reopened]
-  # For this workflow, we're using the workflow_dispatch event which is triggered when the user clicks Run workflow in the GitHub Actions UI
-  #workflow_dispatch:
-    # The workflow_dispatch event accepts optional inputs so you can customize the behavior of the workflow
-#    inputs:
-#     pr_number:
-#       description: "PR number"
-#       required: true
-#       default: undefined
-
-#     rules_file:
-#       description: "Rules file to be checked against"
-#       required: true
-#       default: "rules.yaml"
-
-#     documinder_version:
-#       description: "version of document reminder"
-#       required: false
-#       default: 1.1
         
 # When the event is triggered, GitHub Actions will run the jobs indicated
 jobs:
@@ -32,14 +14,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses : sagarjhaa/Documinder@main
         with:
-          pr: ${{GITHUB_SHA}}
-          #${{github.event.inputs.pr_number}}
-          rules: ${{GITHUB_REF}}
-          #${{github.event.inputs.rules_file}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}  
     #  - uses: actions/checkout@v2
     #  - uses: actions/setup-node@v1
     #  - run: npm install -g @actions/core @actions/github
     #  - uses: ./.github/actions
-    # - run: actions/
-        #|
-        #echo "Hello ${{ github.event.inputs.name }}!"
