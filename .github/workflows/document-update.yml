@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses : actions/hello-world-javascript-action@v1
+      - uses: actions/hello-world-javascript-action@v1
+        id: hello-action
+      - run: echo ${{steps.hello-action.outputs.time}}
 #       - uses : sagarjhaa/Documinder@main
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
