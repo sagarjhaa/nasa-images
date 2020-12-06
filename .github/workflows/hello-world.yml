@@ -15,6 +15,8 @@ jobs:
       - uses : sagarjhaa/Documinder@main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}  
     #  - uses: actions/checkout@v2
     #  - uses: actions/setup-node@v1
     #  - run: npm install -g @actions/core @actions/github
