@@ -32,9 +32,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses : sagarjhaa/Documinder@main
         with:
-          pr: ${{GITHUB_SHA}}
+          pr: ${{github.event.GITHUB_SHA}}
           #${{github.event.inputs.pr_number}}
-          rules: ${{GITHUB_REF}}
+          rules: ${{github.event.GITHUB_REF}}
           #${{github.event.inputs.rules_file}}
     #  - uses: actions/checkout@v2
     #  - uses: actions/setup-node@v1
