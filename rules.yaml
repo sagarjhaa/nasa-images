@@ -9,3 +9,8 @@ rules:
     documents:
       - "document3-1"
       - "document4-1"
+  file3-1:
+    path: "path to file 3-1"
+    documents:
+      - "document5-1"
+      - "document6-1"
