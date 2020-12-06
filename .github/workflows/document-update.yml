@@ -1,15 +1,17 @@
-name: document reminder
+name: document-update
 
 # GitHub Actions Workflows are automatically triggered by GitHub events
 on: 
   pull_request:
     types: [assigned, opened, synchronize, reopened]
-        
-# When the event is triggered, GitHub Actions will run the jobs indicated
 jobs:
   document_update_reminder:
-    # Uses a ubuntu-lates runner to complete the requested steps
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+      GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
+
     steps:
       - uses: actions/checkout@v2
       - uses : sagarjhaa/Documinder@main
@@ -17,7 +19,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}  
-    #  - uses: actions/checkout@v2
     #  - uses: actions/setup-node@v1
     #  - run: npm install -g @actions/core @actions/github
     #  - uses: ./.github/actions
