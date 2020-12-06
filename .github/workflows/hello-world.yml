@@ -2,9 +2,8 @@ name: document reminder
 
 # GitHub Actions Workflows are automatically triggered by GitHub events
 on: 
-  push: 
-   branches:
-      - main
+  pull_request:
+    types: [assigned, opened, synchronize, reopened]
   # For this workflow, we're using the workflow_dispatch event which is triggered when the user clicks Run workflow in the GitHub Actions UI
   #workflow_dispatch:
     # The workflow_dispatch event accepts optional inputs so you can customize the behavior of the workflow
