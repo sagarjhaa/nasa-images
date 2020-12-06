@@ -16,6 +16,11 @@ on:
         required: true
         default: "rules.yaml"
         
+      documinder_version:
+        description: "version of document reminder"
+        required: false
+        default: 1.1
+        
 # When the event is triggered, GitHub Actions will run the jobs indicated
 jobs:
   document_update_reminder:
@@ -23,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses : sagarjhaa/Documinder@v1
+      - uses : sagarjhaa/Documinder@v${{github.event.inputs.documinder_version}}
         with:
           pr: ${{github.event.inputs.pr_number}}
           rules: ${{github.event.inputs.rules_file}}
