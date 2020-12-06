@@ -16,10 +16,14 @@ jobs:
     # Uses a ubuntu-lates runner to complete the requested steps
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g @actions/core @actions/github
-      - uses: ./.github/actions
+      - uses : sagarjhaa/Documinder
+        with:
+          pr: 123
+          rules: rules.yaml
+    #  - uses: actions/checkout@v2
+    #  - uses: actions/setup-node@v1
+    #  - run: npm install -g @actions/core @actions/github
+    #  - uses: ./.github/actions
     # - run: actions/
         #|
         #echo "Hello ${{ github.event.inputs.name }}!"
