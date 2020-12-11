@@ -1,11 +1,9 @@
 rules:
-  file1-1:
-    path: "path to file"
+  - path: "path to file"
     documents:
       - "document1-1"
       - "document2-1"
-  file2-1:
-    path: "path to file 2-1"
+  - path: "path to file 2-1"
     documents:
       - "document3-1"
       - "document4-1"
